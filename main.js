@@ -46,16 +46,14 @@
 //  console.log(minimum(5,10))
 
 //   function sum(num){
-//       var digits=[]
+//  
 //       var add=0;
 //       while(num>0){
 //          var mod= num%10
+//          add+=mod
 //          num=(num/10)-(mod/10)
-//          digits.push(mod)
 //       }
-//       for(var i=0;i<3;i++){
-//           add=add+digits[i];
-//       }
+//       
 //      return add
 //   }
 //   console.log(sum(211));
@@ -102,7 +100,7 @@ function maximum(num){
 console.log(maximum(numbers));
 
 function cut(num){
-num.splice(1,2)
+num.splice(num.length-2,2)
 return num
 }
 console.log(cut(numbers));
@@ -114,51 +112,46 @@ function count(text){
 }
 console.log(count("jjjjj"));
 
-// var stuff=["kim","koi","pit"]
-// console.log(stuff);
-// var things=prompt("thing")
-// function cheak(array,input){ 
-//     var status;
-//     var newArray=[];
+var stuff=["kim","koi","pit"]
+var things=prompt("thing")
+function cheak(array,input){ 
+    var status;
+    for(var i=0;i<array.length;i++){
+    if(input == array[i]){
+      array.splice(i,1);
+     return i;
+    
+    }
+}
+return "no"
+
+}
+console.log(cheak(stuff,things));
+
+// var nums=[5,6,7,7]
+// function triple(array){
+//     var tri=0;
+//     var numArray =[];
 //     for(var i=0;i<array.length;i++){
-//     if(input == array[i]){
-//       array.splice(i,1);
-//        status=i;
-//      newArray=array;
-//      break
-//     }else {
-//         status="no";
+//         tri=array[i]*3;
+// numArray.push(tri)
 //     }
-// }console.log(newArray);
-// return status
-
+// return numArray
 // }
-// console.log(cheak(stuff,things));
-
-var nums=[5,6,7,7]
-function triple(array){
-    var tri=0;
-    var numArray =[];
-    for(var i=0;i<array.length;i++){
-        tri=array[i]*3;
-numArray.push(tri)
-    }
-return numArray
-}
-console.log(triple(nums));
+// console.log(triple(nums));
 
 
 
 
-var numRepat=[5,6,7,7,8,9,9,3,5]
-function scan(array){
-    for(var i=0;i<array.length;i++){
-        for(var j=i+1;j<array.length;j++){
-            if(array[i] == array[j]){
-                array.splice(i,1)
-            }
-        }
-    }
-    return array
-}
-console.log(scan(numRepat));
+// var numRepat=[5,6,7,7,8,9,9,3,5]
+// function scan(array){
+//     for(var i=0;i<array.length;i++){
+//         for(var j=i+1;j<array.length;j++){
+//             if(array[i] == array[j]){
+//                 array.splice(i,1)
+//             }
+//         }
+//     }
+//     return array
+// }
+// console.log(scan(numRepat));
